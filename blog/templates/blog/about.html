@@ -1,13 +1,15 @@
 {% extends 'blog/base.html' %}
+
 {% load markdown_filter %}
 
 
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
+    <h1>About</h1>
     {{ post.body|markdownify|safe }}
 
 
-
-
+    <script>
+        $("#navbar ul li:last").addClass("active");
+    </script>
 {% endblock %}

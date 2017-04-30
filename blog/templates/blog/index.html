@@ -1,10 +1,17 @@
-
 {% extends "blog/base.html" %}
+
 
 {% block content %}
     <ul class="blog-list-group">
         {% for post in latest_post_list %}
-        <li class="blog-list-group-item"><a href="/blog/post/{{ post.id }}">{{ post.title }}</a><span class="blog-badge">{{ post.date }}</span></li>
-    {% endfor %}
+            <li class="blog-list-group-item"><a href="/blog/post/{{ post.id }}">{{ post.title }}</a><span
+                    class="blog-badge">{{ post.date }}</span></li>
+        {% endfor %}
     </ul>
+
+
+    <script>
+        $("#navbar ul li:first").addClass("active");
+    </script>
 {% endblock %}
+
