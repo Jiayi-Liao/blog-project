@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do Not Stop - Wind </title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <script src="{% static 'blog/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap-theme.min.css' %}"/>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+    <script src="{% static 'blog/js/blogApp.js' %}"></script>
+</head>
+<body class="blog_body" ng-app="blogApp" ng-controller="blogController">
+<div id="banner">
+</div>
+<header style="padding-bottom: 40px">
+    <nav class="blog_navbar" style="height: 40px;">
+        <div class="container">
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="blog_ul">
+                    <li class="active"><a href="#">Articles</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div>
+        <h1 class="head-words">talk is cheap </h1>
+        <h1 class="head-words">show me your code </h1>
+    </div>
+</header>
+<section id="content">
+    <div class="container">
+        <div id="posts">
+            {% block content %}{% endblock %}
+        </div>
+        <footer class="copyright">
+            <p>© 2017 Wind(廖嘉逸)</p>
+        </footer>
+    </div>
+</section>
+</body>
+</html>

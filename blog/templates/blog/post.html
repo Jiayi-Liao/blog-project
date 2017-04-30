@@ -1,0 +1,7 @@
+{% extends 'blog/base.html' %}
+{% load markdown_filter %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    {{ post.body|markdownify|safe }}
+{% endblock %}
