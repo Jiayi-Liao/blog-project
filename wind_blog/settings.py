@@ -72,8 +72,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'wind_blog.wsgi.application'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/server/projects/wind_blog/static'
+    os.path.join(BASE_DIR, "static")
 ]
 
 # Database
