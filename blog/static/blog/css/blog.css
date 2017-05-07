@@ -133,3 +133,8 @@
     left: 45%;
     bottom: 0px;
 }
+
+#posts {
+    line-height: 2;
+    font-size: 22px;
+}
