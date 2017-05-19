@@ -4,7 +4,9 @@
 
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
+    <h1 id="title">{{ post.title }}</h1>
+    <p><span
+            class="blog-badge" style="font-style: italic">{{ post.date|date:"Y.m.d" }}</span></p>
     {{ post.body|markdownify|safe }}
 
 
