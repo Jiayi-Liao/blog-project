@@ -59,7 +59,7 @@
     text-align: center;
     color: white;
     font-weight: 300;
-    font-family: myFirstFont ;
+    font-family: myFirstFont;
     font-size: 3em;
 }
 
@@ -69,7 +69,7 @@
     text-align: center;
     color: white;
     font-weight: 300;
-    font-family: myFirstFont ;
+    font-family: myFirstFont;
     font-size: 3em;
 }
 
@@ -128,8 +128,6 @@
     border-radius: 10px;
 }
 
-
-
 .blog-copyright {
     font-size: .95em;
     overflow-x: hidden;
@@ -150,9 +148,37 @@
 #posts {
     line-height: 1.8;
     font-size: 16px;
+    letter-spacing: 0.8px;
+    font-weight: 200;
 }
 
-#title{
+#posts > h1, h2, h3, h4, h5, h6 {
+    font-family: KaiTi;
+    font-style: italic;
+}
+
+#posts > h2 {
+    font-weight: 800;
+}
+
+#posts > h3 {
+    font-weight: 700;
+}
+
+#posts > h4 {
+    font-weight: 600;
+}
+
+#posts > h5 {
+    font-weight: 500;
+}
+
+#posts > h6 {
+    font-weight: 400;
+}
+
+#title {
     font-style: italic;
     font-family: KaiTi;
+    font-weight: 900;
 }
