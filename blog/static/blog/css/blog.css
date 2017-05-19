@@ -1,3 +1,7 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url('../fonts/VLADIMIR.TTF');
+}
 
 .blog_body {
     font-size: 16px;
@@ -55,6 +59,7 @@
     text-align: center;
     color: white;
     font-weight: 300;
+    font-family: myFirstFont ;
     font-size: 3em;
 }
 
@@ -64,6 +69,7 @@
     text-align: center;
     color: white;
     font-weight: 300;
+    font-family: myFirstFont ;
     font-size: 3em;
 }
 
@@ -101,9 +107,14 @@
     border-top: 0;
 }
 
+.blog-list-group-item > a {
+    font-family: KaiTi;
+}
+
 .blog-list-group-item > .blog-badge {
     float: right;
     display: inline-block;
+    font-style: italic;
     min-width: 10px;
     padding: 3px 7px;
     font-size: 12px;
@@ -116,6 +127,8 @@
     background-color: #777;
     border-radius: 10px;
 }
+
+
 
 .blog-copyright {
     font-size: .95em;
@@ -137,4 +150,9 @@
 #posts {
     line-height: 1.8;
     font-size: 16px;
+}
+
+#title{
+    font-style: italic;
+    font-family: KaiTi;
 }

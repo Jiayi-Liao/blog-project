@@ -5,7 +5,7 @@
     <ul class="blog-list-group">
         {% for post in latest_post_list %}
             <li class="blog-list-group-item"><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a><span
-                    class="blog-badge">{{ post.date }}</span></li>
+                    class="blog-badge">{{ post.date|date:"Y.m.d" }}</span></li>
         {% endfor %}
     </ul>
 
