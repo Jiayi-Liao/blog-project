@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'wind_blog',
-        'USER': 'blog',                      # Not used with sqlite3.
-        'PASSWORD': 'buptwind',                  # Not used with sqlite3.
+        'USER': 'wind',                      # Not used with sqlite3.
+        'PASSWORD': 'oVeR1995032955',                  # Not used with sqlite3.
         'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '5432',
     }
@@ -127,4 +127,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/www'
+STATIC_ROOT = '/var/www/static'
