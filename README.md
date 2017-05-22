@@ -1,6 +1,6 @@
 # blog-project
 My blog code and files.
 Next Step:
-* Add different fonts
-* Add datetime in every post
-* Maybe make cover look better
+* Add different fonts(done)
+* Add datetime in every post(done)
+* Maybe make cover look better(done)
