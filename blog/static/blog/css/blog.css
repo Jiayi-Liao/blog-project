@@ -153,8 +153,7 @@
 }
 
 #posts > h1, h2, h3, h4, h5, h6 {
-    font-family: KaiTi;
-    font-style: italic;
+    font-family: 'Times New Roman','KaiTi';
 }
 
 #posts > h2 {
@@ -179,6 +178,6 @@
 
 #title {
     font-style: italic;
-    font-family: KaiTi;
+    font-family: 'Times New Roman','KaiTi';
     font-weight: 900;
 }
