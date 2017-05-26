@@ -1,0 +1,75 @@
+***
+* Scala反射机制
+* Scala vs Java
+## Scala反射机制  
+> #### Scala反射机制中必须要明白的三个概念
+>> * universe
+>> * symbol
+>> * mirror  
+> #### 通过Scala的REPL来逐步探索其中关系:
+> ```  
+scala> import scala.reflect.runtime.{universe => ru}  
+import scala.reflect.runtime.{universe=>ru}  
+// 定义Person  
+scala> case class Person(name: String)  
+defined class Person  
+// 生成装载了所有类的Mirror  
+scala> val m = ru.runtimeMirror(getClass.getClassLoader)  
+m: scala.reflect.runtime.universe.Mirror ...  
+// 生成与Person相关的ClassSymbol  
+scala> val classPerson = ru.typeOf[Person].typeSymbol.asClass  
+classPerson: scala.reflect.runtime.universe.ClassSymbol = class Person  
+// 反射生成ClassMirror  
+scala> val cm = m.reflectClass(classPerson)  
+cm: scala.reflect.runtime.universe.ClassMirror = class mirror for Person (bound to null)  
+// 生成Person构造函数的MethodSymbol  
+scala> val ctor = ru.typeOf[Person].declaration(ru.nme.CONSTRUCTOR).asMethod  
+ctor: scala.reflect.runtime.universe.MethodSymbol = constructor Person  
+// 利用Person ClassMirror生成构造函数的Method Mirror  
+scala> val ctorm = cm.reflectConstructor(ctor)  
+ctorm: scala.reflect.runtime.universe.MethodMirror = constructor mirror for Person.<init>(name: String): Person (bound to null)  
+// 实例化  
+scala> val p = ctorm("Mike")  
+p: Any = Person(Mike)  
+> ```  
+> #### 结论
+>> 从上述代码中可以看到，universe是Scala反射机制的入口类，几乎提供了所有和反射相关的方法，包括没有涉及到的Types,Annotations等。symbol则是作为mirror和ru沟通的中介，ClassSymbol包含了Class的信息，MethodSymbol包含了Method的信息，通过这些信息，才能实现反射。Mirror则可以看作是最后反射实现的执行者。  
+>> 其实这里会显得比较繁琐，如果想成功反射一个对象，那么需要从symbol到mirror最后实例化。具体为什么这样设计我也不是很清楚，留给以后探究吧！
+
+***
+## Scala vs Java
+> 先看一个实例  
+> ```  
+scala> class E {  
+    |   type T  
+    |   val x: Option[T] = None  
+    | }  
+defined class E  
+scala> class C extends E  
+defined class C  
+scala> class D extends C  
+defined class D  
+//   
+scala> val c = new C { type T = String }  
+c: C{type T = String} = $anon$1@7113bc51  
+scala> val d = new D { type T = String }  
+d: D{type T = String} = $anon$1@46364879  
+//   
+scala> c.getClass.isAssignableFrom(d.getClass)  
+res6: Boolean = false  
+> ```  
+> 正常情况下，C应该是D的父类，但scala在运行时却识别不了？这是为什么？  
+> 在compile的时候，java和scala都能够正常的compile，即识别出C是D的父类，在编译时scala却为了将代码编程JVM中可执行的字节码，而自动创建了一些classes（貌似是由于scala一些闭包等特有特性的原因），导致在实例层面上无法识别类之间的关系，这种情况下，我们一般采用Scala反射中的Type来得到继承关系的结果。  
+> ```  
+scala> import scala.reflect.runtime.{universe => ru}  
+import scala.reflect.runtime.{universe=>ru}  
+scala> def m[T: ru.TypeTag, S: ru.TypeTag](x: T, y: S): Boolean = {  
+    |   val leftTag = ru.typeTag[T]  
+    |   val rightTag = ru.typeTag[S]  
+    |   leftTag.tpe <:< rightTag.tpe  
+    | }  
+m: [T, S](x: T, y: S)(implicit evidence$1: scala.reflect.runtime.universe.TypeTag[T], implicit evidence$2:  
+scala.reflect.runtime.universe.TypeTag[S])Boolean  
+scala> m(d, c)  
+res9: Boolean = true  
+> ```
