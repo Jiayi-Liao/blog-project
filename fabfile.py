@@ -25,9 +25,12 @@ def deploy():
     commit()
     push()
     # remote deploy
-    with cd(blog_dir):
+    with prefix('cd ' + blog_dir + ' && source  ../bin/activate'):
         run('source ../bin/activate')
+        run('source /etc/profile')
         run('git checkout develop && git pull origin develop')
+        run('./manage.py test')
         run('pkill gunicorn')
-        run('gunicorn wind_blog.wsgi -c gunicorn_setting.py')
+        run('sleep 1')
+        run('gunicorn wind_blog.wsgi -c gunicorn_setting.py', pty = False)
 
