@@ -29,7 +29,7 @@ def deploy():
         run('source ../bin/activate')
         run('source /etc/profile')
         run('git checkout develop && git pull origin develop')
-        run('./manage.py test')
+        run('./manage.py test --settings wind_blog.production')
         run('pkill gunicorn')
         run('sleep 1')
         run('gunicorn wind_blog.wsgi -c gunicorn_setting.py', pty = False)
