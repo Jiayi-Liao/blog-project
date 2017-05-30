@@ -9,7 +9,7 @@ def add():
     local('git checkout develop && git add -A')
 
 def commit():
-    local('git commit -am "fixed" ')
+    local('git commit -am "fixed"  ')
 
 def fetch():
     local('git fetch origin develop && git pull origin develop')
