@@ -21,6 +21,7 @@ def push():
 def deploy():
     blog_dir = '/server/projects/wind_blog/blog-project'
     test()
+    fetch()
     add()
     commit()
     push()
