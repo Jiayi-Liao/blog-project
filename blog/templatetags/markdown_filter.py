@@ -8,4 +8,5 @@ register = template.Library()
 @stringfilter
 def markdownify(text):
     # safe_mode governs how the function handles raw HTML
-    return markdown.markdown(text)
+    format_text = markdown.markdown(text, extensions=['markdown.extensions.codehilite', 'markdown.extensions.fenced_code'])
+    return format_text

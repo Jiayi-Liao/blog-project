@@ -17,7 +17,7 @@ def index(request):
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    post.body = markdown(post.body)
+    #post.body = markdown(post.body)
     context = {'post': post}
     return render(request, 'blog/post.html', context)
 
