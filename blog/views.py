@@ -10,7 +10,7 @@ from markdown import markdown
 
 
 def index(request):
-    latest_post_list = Post.objects.order_by('date').exclude(title='about')
+    latest_post_list = Post.objects.order_by('-date').exclude(title='about')
     context = {'latest_post_list': latest_post_list}
     return render(request, 'blog/index.html', context)
 
