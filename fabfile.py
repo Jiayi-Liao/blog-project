@@ -1,7 +1,7 @@
 from fabric.api import *
 
 env.hosts = ['root@101.200.171.13']
-
+ 
 def test():
     local('./manage.py test')
 
