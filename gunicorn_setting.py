@@ -5,9 +5,9 @@ import multiprocessing, os
 
 print('gunicorn config is running....')
 
-bind = "0.0.0.0:8000"
+bind = "127.0.0.1:8000"
 #worker_class = "eventlet"
-workers = 2
+workers = 1
 # workers = multiprocessing.cpu_count() * 2 + 1
 pidfile = '/tmp/gunicorn.pid'
 # accesslog = '/tmp/gunicorn_access.log'
