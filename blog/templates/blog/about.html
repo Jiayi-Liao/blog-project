@@ -3,6 +3,9 @@
 {% load markdown_filter %}
 
 
+{% block title %}
+    <title>Game Changer | Wind </title>
+{% endblock %}
 
 {% block content %}
     {{ post.body|markdownify|safe }}
