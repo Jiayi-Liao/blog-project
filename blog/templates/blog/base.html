@@ -13,7 +13,7 @@ var _hmt = _hmt || [];
 
 <head>
     <meta charset="UTF-8">
-    <title>Game Changer - Wind </title>
+    {% block title %}{% endblock %}
     <meta name="description" content="Wind(廖嘉逸)个人技术博客,记录每一次成长和进步."/>
     <meta name="keywords" content="Wind 廖嘉逸 博客 GrowingIO"/>
     <meta name="author" content="Wind(廖嘉逸)"/>
@@ -24,6 +24,7 @@ var _hmt = _hmt || [];
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap-theme.min.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/styles.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}"/>
+    <link rel="shortcut icon" href="{% static 'blog/image/wind-favicon.ico' %}" />
     <script src="{% static 'js/angular.min.js' %}"></script>
     <script src="{% static 'blog/js/blogApp.js' %}"></script>
 </head>
