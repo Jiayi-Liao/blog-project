@@ -2,3 +2,5 @@
 *.pyc
 production.py
 **initial.py
+posts
+.gitignore

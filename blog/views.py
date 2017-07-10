@@ -3,6 +3,10 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from models import Post
 from markdown import markdown
+from django.http import HttpResponse
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 # Create your views here.
@@ -27,3 +31,12 @@ def about(request):
     post.body = markdown(post.body)
     context = {'post': post}
     return render(request, 'blog/about.html', context)
+
+def upload(request):
+    import os
+    dir = os.getcwd()
+    posts = Post.objects.all()
+    for post in posts:
+        with open(dir + '/posts/' + post.title.replace(" ","\t"), 'wb') as f:
+            f.write(post.body)
+    return HttpResponse()
