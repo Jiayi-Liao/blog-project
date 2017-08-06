@@ -1,11 +1,11 @@
 {% extends "blog/base.html" %}
 {% block title %}
-    <title>Game Changer | Wind </title>
+    <title>Game Changer - 廖嘉逸 </title>
 {% endblock %}
 {% block content %}
     <ul class="blog-list-group">
         {% for post in latest_post_list %}
-            <li class="blog-list-group-item"><span>{{ post.date|date:"Y.m.d" }}</span>&nbsp; >> &nbsp; <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></li>
+            <li class="blog-list-group-item"><span>{{ post.date|date:"Y.m.d" }}</span>&nbsp;> &nbsp; <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></li>
         {% endfor %}
     </ul>
 

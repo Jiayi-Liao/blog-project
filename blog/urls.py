@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^post/(?P<post_id>[0-9]+)', views.post_detail, name="post_detail"),
     url(r'^about/$', views.about, name="about"),
-    url(r'^upload/$', views.upload, name="upload")
+    url(r'^upload/$', views.upload, name="upload"),
+    url(r'google55142097f98690f6.html', views.google, name='google')
 ]

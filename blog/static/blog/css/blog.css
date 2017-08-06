@@ -9,7 +9,7 @@
 }
 
 #banner {
-    background: linear-gradient(to bottom, #222, #f5f5f5);
+    background: linear-gradient(to bottom, deepskyblue, lightskyblue);
     position: absolute;
     top: 0;
     left: 0;

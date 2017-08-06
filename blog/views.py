@@ -40,3 +40,6 @@ def upload(request):
         with open(dir + '/posts/' + post.title.replace(" ","\t"), 'wb') as f:
             f.write(post.body)
     return HttpResponse()
+
+def google(request):
+    return render(request, 'google55142097f98690f6.html')
