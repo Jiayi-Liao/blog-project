@@ -13,7 +13,7 @@ def add():
     local('git checkout develop && git add -A')
 
 def commit():
-    local('git commit -am "fixed"  ')
+    local('git commit -am ""  ')
 
 def fetch():
     local('git fetch origin develop && git pull origin develop')
@@ -47,5 +47,6 @@ def deploy():
         run('./manage.py test --settings wind_blog.production')
         run('pkill gunicorn')
         run('sleep 1')
+        run('python manage.py collectstatic')
         run('gunicorn wind_blog.wsgi -c gunicorn_setting.py', pty = False)
 
