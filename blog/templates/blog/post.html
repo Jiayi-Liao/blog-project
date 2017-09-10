@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block content %}
-    <h1 id="title">{{ post.title }}</h1>
+    <h1 id="post-title", style="font-family: YanoneFont">{{ post.title }}</h1>
     <p><span
-            class="blog-badge" style="font-style: italic">{{ post.date|date:"Y.m.d" }}&nbsp;&nbsp;-&nbsp;&nbsp;Wind</span></p>
+            class="blog-badge" style="font-style: italic;font-family: YanoneFont">{{ post.date|date:"F d, Y, l" }}&nbsp;&nbsp;-&nbsp;&nbsp;Wind</span></p>
     {{ post.body|markdownify|safe }}
 
 

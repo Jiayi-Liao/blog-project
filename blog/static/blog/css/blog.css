@@ -3,13 +3,24 @@
     src: url('../fonts/VLADIMIR.TTF');
 }
 
+@font-face {
+    font-family: YanoneFont;
+    src: url('../fonts/YanoneKaffeesatz-Bold.ttf');
+}
+
+@font-face {
+    font-family: HelveticalFont;
+    src: url('../fonts/HelveticaNeue.ttf');
+}
+
+
 .blog_body {
     font-size: 16px;
     background-color: #f5f5f5
 }
 
 #banner {
-    background: linear-gradient(to bottom, deepskyblue, lightskyblue);
+    background: linear-gradient(to bottom, #442f2f, white);
     position: absolute;
     top: 0;
     left: 0;
@@ -77,6 +88,7 @@
     position: relative;
     padding: 10px 90px 20px 90px;
     z-index: 20;
+    width: 850px;
     background: white;
     height: 100%;
 }
@@ -88,30 +100,33 @@
 
 .blog-list-group-item:first-child {
     position: relative;
+    font-family: YanoneFont;
     display: block;
     padding: 10px 15px;
     margin-bottom: 0;
     background-color: #fff;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .blog-list-group-item {
     position: relative;
     display: block;
+    font-family: YanoneFont;
     padding: 10px 15px;
     background-color: #fff;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 16px;
     border-top: 1px solid #ddd;
     border-top: 0;
 }
 
 .blog-list-group-item > a {
-    font-family: 'Times New Roman','KaiTi';
+    font-family: 'HelveticalFont';
 }
 
 .blog-list-group-item > .blog-badge {
+    font-family: myFirstFont;
     float: right;
     display: inline-block;
     font-style: italic;
@@ -146,40 +161,44 @@
 }
 
 #posts {
-    line-height: 1.8;
+    line-height: 1.75em;
     font-size: 16px;
-    letter-spacing: 0.8px;
-    font-weight: 200;
+    letter-spacing: 1px;
+    font-weight: 300;
 }
 
 #posts > h1, h2, h3, h4, h5, h6 {
-    font-family: 'Times New Roman','KaiTi';
+    font-family: 'YanoneFont','YanoneFont';
+}
+
+#posts > h1 {
+    font-weight: 900;
+    font-size: 29px;
 }
 
 #posts > h2 {
     font-weight: 800;
+    font-size: 27px;
 }
 
 #posts > h3 {
     font-weight: 700;
+    font-size: 25px;
 }
 
 #posts > h4 {
     font-weight: 600;
+    font-size: 23px;
 }
 
 #posts > h5 {
     font-weight: 500;
+    font-size: 21px;
 }
 
 #posts > h6 {
     font-weight: 400;
-}
-
-#title {
-    font-style: italic;
-    font-family: 'Times New Roman','KaiTi';
-    font-weight: 900;
+    font-size: 19px;
 }
 
 code {
