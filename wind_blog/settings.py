@@ -70,11 +70,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'wind_blog.wsgi.application'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
