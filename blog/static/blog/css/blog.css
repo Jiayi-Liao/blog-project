@@ -20,7 +20,7 @@
 }
 
 #banner {
-    background: linear-gradient(to bottom, #442f2f, white);
+    /*background: linear-gradient(to bottom, #442f2f, white);*/
     position: absolute;
     top: 0;
     left: 0;
@@ -78,7 +78,7 @@
     position: relative;
     margin-top: 20px;
     text-align: center;
-    color: white;
+    color: black;
     font-weight: 300;
     font-family: myFirstFont;
     font-size: 3em;
